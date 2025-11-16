@@ -1,15 +1,20 @@
-## Put comments here that give an overall description of what your
-## functions do
+## trying to write a pair of functions for the R Programming course, 
+## that are supposed to calculate and cache the inverse of a matrix
 
-## Write a short comment describing this function
+## storing a given matrix and its inverse in cache
 
 makeCacheMatrix <- function(x = matrix()) {
-
+    mat <<- x
+    inv <<- solve(x)
 }
 
 
-## Write a short comment describing this function
+## checking if the inverse for a given matrix has been cached, if so returning the cached inverse, 
+## else calculating and returning the inverse 
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+    if (identical(x, mat)) {
+        message("getting cached data")
+        return(inv)}
+    else solve(x)
 }
